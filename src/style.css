@@ -1,0 +1,735 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: helvetica;
+}
+
+@font-face {
+  font-family: "Linotype Didot";
+  src: url("./Fonts/DidotLTPro-Roman.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* black anouncement bar */
+.subHeader {
+  padding-top: 4px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #ccc;
+  /* position: relative; */
+  background-color: black;
+  height: 24px;
+  margin-bottom: 10px;
+}
+
+.company-name {
+  font-family: "Helvetica";
+  font-weight: 900;
+  font-size: 37px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.slider-container {
+  z-index: 1;
+  /* position: absolute; */
+  margin: 0 auto;
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+}
+
+.sliderAnouncement {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.anouncements-text {
+  text-align: center;
+  flex: 0 0 100%;
+}
+/* hero 1 image carousel */
+.hero1-image-container {
+  z-index: -1;
+  display: flex;
+  width: 100vw;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero1-image {
+  object-fit: cover;
+}
+/* header section */
+
+header {
+  height: 80px;
+  width: 100%;
+  background-color: #fff;
+  transition: transform 1s ease-in;
+  border-bottom: 1px solid #ddd;
+}
+/* for sticky header */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.placeholder {
+  display: none;
+  height: 0;
+}
+
+/* for sticky header */
+
+.title-header-div {
+  margin: 0 70px 0 70px;
+}
+.user-nav ul {
+  font-size: 13px;
+  display: flex;
+  gap: 15px;
+}
+
+.search-btn {
+  width: 5px;
+}
+
+.currency-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fff;
+  width: 120px;
+  position: relative;
+}
+#down-arrow {
+}
+
+.active-list {
+  z-index: 9;
+  font-size: 12px;
+  text-align: left;
+  background-color: #fff;
+  margin-top: 10px;
+  position: absolute;
+  top: 100%;
+  left: -12%;
+  padding: 10px 0 10px 12px;
+  height: 160px;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px var(--color-support-grey) solid;
+}
+
+/* still in the header, but page navigation*/
+
+.page-title {
+  font-size: 45px;
+}
+
+.page-nav {
+  position: relative;
+  margin-top: 0px;
+  font-size: 12px;
+  height: 40px;
+  border-bottom: solid 2px
+    var(--color-support-mid-grey);
+}
+
+.page-nav-list {
+  z-index: 9;
+  display: flex;
+  gap: 20px;
+}
+
+.info-nav-list {
+  z-index: 9;
+  display: flex;
+  gap: 20px;
+  padding-left: 15px;
+  border-left: var(--color-primary) 1px solid;
+}
+
+.page-nav-list div,
+.info-nav-list div {
+  padding-top: 10px;
+}
+
+/*////////////////////////////////////////////
+page-links hidden menus
+///////////////////////////*/
+
+.page-nav-item {
+  position: relative;
+}
+
+.page-nav li:hover {
+  border-bottom: solid var(--color-primary) 2px;
+}
+
+/* new arrivals hidden list*/
+.hidden-newArrivals-list,
+.hidden-shop-list {
+  margin-top: 30px;
+  padding: 0 20px 0px 20px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 1px solid
+    var(--color-support-mid-grey);
+  transition: opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  z-index: 9;
+}
+.hidden-newArrivals-container,
+.hidden-benefits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-v ul {
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.image-description {
+  font-size: 12px;
+}
+
+/* shop hidden list */
+.page-nav-shop {
+  position: relative;
+}
+
+.hidden-shop-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: flex-start;
+}
+
+#items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* benefits hidden list */
+.page-nav-benefits {
+  position: relative;
+}
+.relative {
+  position: relative;
+  margin-left: 300px;
+}
+
+.absolute {
+  right: 590px;
+  position: absolute;
+}
+
+.hidden-benefits-container {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.hidden-benefits-list {
+  z-index: 9;
+  margin-top: 30px;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  height: 375px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 1px solid
+    var(--color-support-mid-grey);
+  transition: opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+/* press hidden list */
+.page-nav-press {
+  position: relative;
+}
+
+.twod-image-container {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden-press-container h3 {
+  margin-bottom: 10px;
+}
+
+.hidden-press-list {
+  z-index: 9;
+  margin-top: 10px;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  height: 375px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 1px solid
+    var(--color-support-mid-grey);
+  transition: opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+/*extra stuff added for smoother transition*/
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Specific positioning and styles for each dropdown list */
+.hidden-newArrivals-list,
+.hidden-shop-list,
+.hidden-benefits-list,
+.hidden-press-list {
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  margin-top: 30px;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  height: 380px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 1px solid
+    var(--color-support-mid-grey);
+  transition: opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out; /* Smooth transition for opacity and visibility */
+}
+
+/* Container inside each hidden list for layout */
+.hidden-newArrivals-container,
+.hidden-benefits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Grid layout for shop hidden list */
+.hidden-shop-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: flex-start;
+}
+
+/* Additional styles for press hidden list */
+.twod-image-container {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+.hidden-press-container h3 {
+  margin-bottom: 10px;
+}
+
+/* Fade-in effect on hover */
+.nav-item:hover .hidden {
+  opacity: 1;
+  visibility: visible;
+  display: block; /* Ensure the list is visible when hovered */
+}
+
+/* x scroll one */
+.xScroll-1 {
+  padding: 85px 0 25px 0;
+  height: 400px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.xScroll-1-container {
+  display: inline-flex;
+  white-space: nowrap;
+  padding: 10px;
+}
+.xScroll-1-item {
+  width: 220px;
+  height: 175px;
+  margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* results benefits are real */
+
+.image-with-text {
+  overflow-x: hidden;
+}
+.results-1-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.results-text {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #000;
+}
+
+.results-text h1 {
+  font-family: "Linotype Didot";
+  font-size: 40px;
+}
+
+.results-text p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.btn-imgWithText {
+  font-family: "Courier New";
+
+  padding-bottom: 4px;
+  color: #fff;
+  background-color: transparent;
+}
+
+.btn-imgWithText:hover {
+  border-bottom: 2px solid #fff;
+}
+
+/*////////////////////////////////////////////
+why switch 
+*/
+.why-switch {
+  padding: 100px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-whySwitch {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+
+  width: 70%;
+}
+.container-whySwitch h1 {
+  font-size: 34px;
+}
+
+.container-whySwitch h2 {
+  color: #666;
+  font-style: italic;
+  font-family: "Linotype Didot";
+}
+
+.container-whySwitch-h {
+  margin: 130px 15px 130px 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.container-whySwitch-h h1 {
+  font-size: 30px;
+  text-align: center;
+}
+.container-whySwitch p {
+  letter-spacing: 1.4px;
+  font-size: 14px;
+}
+
+/*////////////////////////////////////////////
+dermatologists recommend 
+image with text 2
+*/
+.image-with-text__dermatologist {
+  height: 36rem;
+  background-color: black;
+}
+.dermatologist-img {
+  background-size: cover;
+  height: 36em;
+
+  background-image: url("./images/img-with-text-2/image-with-text__dermatolologists.webp");
+}
+.dermatologist-text {
+  padding: 18rem 0 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  width: 41%;
+  height: 30%;
+}
+.dermatologist-text h1 {
+  line-height: 0.8;
+  font-family: "Linotype Didot";
+  font-size: 44px;
+  font-weight: 100;
+  letter-spacing: 1.2px;
+}
+.dermatologist-text p {
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  color: #666;
+}
+
+.btn-dermatologist {
+  margin-top: 10px;
+  padding: 15px 30px 15px 30px;
+  color: black;
+  border: 1px solid black;
+  background-color: transparent;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+.astrix {
+  margin-bottom: 2px;
+}
+
+/*////////////////////////////////////////////
+reusable classes
+*/
+
+.scrollbar {
+  height: 30rem;
+}
+
+/*////////////////////////////////////////////
+xscroll-2
+*/
+
+.xScroll-2 {
+  padding: 140px 50px;
+  display: flex;
+  gap: 60px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.xScroll-2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.xScroll-2-imgScroll-container {
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  gap: 60px;
+  height: 250px;
+  width: 300px;
+}
+
+.xScroll-2-description-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.xScroll-2-imgScroll-container img {
+  scroll-snap-align: start;
+}
+
+.padding-right {
+  padding-right: 37px;
+}
+
+.color-div {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+.color-div-container {
+  display: flex;
+  gap: 5px;
+}
+[data-div^="azure"] {
+  background-color: rgb(98, 249, 201);
+}
+[data-div^="white"] {
+  background-color: #e5e2e2;
+}
+[data-div^="pink"] {
+  background-color: rgb(223, 137, 151);
+}
+
+[data-div^="coral"] {
+  background-color: rgb(231, 146, 115);
+}
+[data-div^="niceWhite"] {
+  background-color: rgb(231, 229, 229);
+}
+[data-div^="seashell"] {
+  background-color: rgb(250, 126, 99);
+}
+[data-div^="seabreeze"] {
+  background-color: rgb(174, 216, 233);
+}
+[data-div^="petal"] {
+  background-color: rgb(199, 161, 173);
+}
+
+.btn-add-to-bag {
+  font-size: 12px;
+  width: 125px;
+  padding: 8px;
+  border: 1px solid #333;
+  background-color: transparent;
+}
+
+i:hover {
+  color: rgb(245, 117, 138);
+}
+
+.btn-add-to-bag:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/*endorsement imgs and endorsement text*/
+
+.container-img-alt-text {
+  position: absolute;
+  top: -40px;
+  height: 30px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.just-landed {
+  height: 20px;
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  color: #ccc;
+  background-color: black;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.container-endorsement-imgs {
+  display: flex;
+}
+
+/*change images through btns*/
+.color-div-border {
+  border: solid 1.5px black;
+}
+
+.azure,
+.white,
+.pink,
+.coral {
+  height: 23px;
+  width: auto;
+}
+/*////////////////////////////////////////////
+reusable classes
+*/
+
+.container-v {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container-v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-h {
+  display: flex;
+}
+.container-h-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.container-h-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-family: "Linotype Didot";
+  font-size: 30px;
+}
