@@ -1,0 +1,19 @@
+{
+  "name": "testsilcpillowcase",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node start.mjs",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "open": "^10.1.0",
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "default-browser": "^5.2.1"
+  }
+}
