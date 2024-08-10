@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: helvetica;
+  font-family: "Linotype Didot";
 }
 
 @font-face {
@@ -595,7 +595,6 @@ xscroll-2
 .color-div {
   width: 20px;
   height: 20px;
-  background-color: black;
 }
 .color-div-container {
   display: flex;
@@ -614,7 +613,7 @@ xscroll-2
 [data-div^="coral"] {
   background-color: rgb(231, 146, 115);
 }
-[data-div^="niceWhite"] {
+[data-div^="whiteFancy"] {
   background-color: rgb(231, 229, 229);
 }
 [data-div^="seashell"] {
@@ -732,4 +731,373 @@ a {
 h1 {
   font-family: "Linotype Didot";
   font-size: 30px;
+}
+
+/*////////////////*/
+.results-2-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.results-2-container h1 {
+  font-size: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.image-with-text-2 {
+  overflow-x: hidden;
+}
+.results-1-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.results-text-2 {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000;
+}
+
+.results-text-2 p {
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.btn-imgWithText-2 {
+  font-family: "Courier New";
+
+  padding-bottom: 4px;
+  color: #fff;
+  background-color: transparent;
+}
+
+.btn-imgWithText-2:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.results-text-2 button {
+  margin-top: 15px;
+}
+
+/* mask scroll */
+
+.xScroll-3 {
+  padding: 140px 50px;
+  display: flex;
+  gap: 60px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.xScroll-3-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.xScroll-3-imgScroll-container {
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  gap: 60px;
+  height: 250px;
+  width: 300px;
+}
+
+.xScroll-3-description-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.xScroll-3-imgScroll-container img {
+  scroll-snap-align: start;
+}
+
+.padding-right {
+  padding-right: 37px;
+}
+
+.color-div {
+  width: 20px;
+  height: 20px;
+}
+.color-div-container {
+  display: flex;
+  gap: 5px;
+}
+[data-fmDiv^="aquarius"] {
+  background-color: rgb(98, 249, 201);
+}
+[data-fmDiv^="pisces"] {
+  background-color: #e5e2e2;
+}
+[data-fmDiv^="aries"] {
+  background-color: rgb(223, 137, 151);
+}
+
+[data-fmDiv^="taurus"] {
+  background-color: rgb(231, 146, 115);
+}
+[data-fmDiv^="gemini"] {
+  background-color: rgb(231, 229, 229);
+}
+[data-fmDiv^="cancer"] {
+  background-color: rgb(250, 126, 99);
+}
+[data-fmDiv^="leo"] {
+  background-color: rgb(174, 216, 233);
+}
+[data-fmDiv^="virgo"] {
+  background-color: rgb(199, 161, 173);
+}
+
+.btn-add-to-bag {
+  font-size: 12px;
+  width: 125px;
+  padding: 8px;
+  border: 1px solid #333;
+  background-color: transparent;
+}
+
+i:hover {
+  color: rgb(245, 117, 138);
+}
+
+.btn-add-to-bag:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/*endorsement imgs and endorsement text*/
+
+.container-img-alt-text {
+  position: absolute;
+  top: -40px;
+  height: 30px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.just-landed {
+  height: 20px;
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  color: #ccc;
+  background-color: black;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.container-endorsement-imgs {
+  display: flex;
+}
+
+/*change images through btns*/
+.color-div-border {
+  border: solid 1.5px black;
+}
+
+.azure,
+.white,
+.pink,
+.coral {
+  height: 23px;
+  width: auto;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////*/
+
+footer {
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 1.2px;
+  height: 500px;
+  color: #ccc;
+  background-color: black;
+}
+
+.footer-container {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 20px 0 20px;
+}
+
+.spacing-container {
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  display: flex;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 50px;
+  flex-basis: 10px;
+}
+
+.footer-column:nth-child(2) {
+  margin: 0 0 0 100px;
+  display: flex;
+  gap: 40px;
+}
+
+.footer-column:last-child {
+  padding: 0 0 0 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
+}
+
+.inner-column ul {
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+aside {
+  color: #aaa;
+  font-size: 8px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+aside span {
+  border-bottom: 1px white solid;
+}
+
+footer h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 12px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+}
+
+#email {
+  color: white;
+  width: 70%;
+  background-color: black;
+  border: none;
+  border-bottom: solid #ccc 2px;
+  box-shadow: none;
+  padding-bottom: 5px;
+  outline: none;
+}
+
+.form input::placeholder {
+  color: #ccc;
+}
+
+.form button {
+  letter-spacing: 1.2;
+  color: white;
+  background-color: black;
+  border: none;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.footer-footer {
+  color: #ccc;
+}
+
+.footer-asides-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid
+    rgba(255, 255, 255, 0.519);
+}
+
+.footer-currency-container {
+  position: relative;
+}
+
+#currency-menu {
+  font-size: 10px;
+  background-color: black;
+  width: 160px;
+  height: 170px;
+  border: solid white 1px;
+  padding: 10px;
+  position: absolute;
+  bottom: 25px;
+  left: -10;
+}
+
+#currency-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#chevron-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+#chevron-container i {
+  margin-top: 2px;
+}
+
+#chevron-container i:hover {
+  color: #ccc;
+}
+
+#chevron-container:hover {
+  cursor: pointer;
+}
+
+.social-media svg,
+#payment-methods svg {
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#facebook {
+  color: white;
+}
+
+#payment-methods {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 }

@@ -1,0 +1,116 @@
+to start with this from the beginning, I now have three classes, one in view, one in controller
+and one in model. 
+
+since controller is the one controlling the other two, I will understand the other two
+through controller. 
+
+The constructor: 
+model and view in the arguments is the only way to reference them, but that means they are 
+regulated to the constructor. by writing this.view it allows them to be accessed outside the
+constructor. 
+
+the this.view.on("buttonClick) refers to the click event from the view, and then binds any 
+this's used on handleButtonClick to the this inside this controller class, as typically
+this in a function that is being called by an event refers to where the event is firing, but
+we want it to apply only to controller. 
+
+handleButtonClick function takes the event passed into it from where it will be used, 
+and destructures it to two parts, button and containerKey. 
+
+color is the whole dataset of colors, azure lets say. 
+imageSrcs comes from model, which uses a function from model that gets all three srcs for one
+color
+basically, imgSrcs is an array of srcs
+imgEls is same thing but from view, and uses a function to make a nodeList of all the 
+divs that contain images, according to the containerKey which will be matched by the grouos
+of buttons (containerKey comes from the button groups from the constructor in view)
+
+then after subtantiating these variable names for the colors, the imgsrcs, and the imgels, 
+it immediately calls updateImages with the srcs and imgEls.
+
+next up we substantiate a previousButton var to know which to toggle border class off for
+which ref the model for the selected button using the containerKey to get the group of buttons, 
+and then the button
+
+then we have an if clause that checks if there is a previous button, and makes sure that the\
+previous button is not the current button, and if so removes the border class from view from the 
+prev btn
+
+then the border is turned on using the same method from view, by giving that method the current
+button and takes the results of classList.contains and then oppositing it because that will means
+if it has the border, then its true, making it false which in the toggle function removes, 
+and if it does not have it it returns false, which becomes true and adds it. 
+
+and then finally using the models setSelectedButton, we just feed it the container key to decipher 
+which group, and the button if the current button contains the class, or null if it does not. 
+
+finally, we initialize the bindButtonClick function, by inputting the publish method as the handler
+the handler referenced in publish is from the events object, which was filled by the subscribe
+method, which sent the handler which is handlebuttonclcik to the events object in the controller
+class
+
+last but not least, we initialize new instances of the model and view, giving them variables, 
+which we then use as the arguments for the new instance of controller to be used in its
+constructor. 
+
+and we initalize controller.init()
+
+////////////////////////////////////////////////////////////////////////////////
+
+For the limit scroll stuff
+
+there is a function that updates the scroll limits, so how far left and right
+that it can be scrolled. 
+firstly it finds the last child by the length of the array of scrollable divs, 
+- 1. 
+
+then using the lastChild it calculates the exact number of the last items end
+and updates a let variable from 0 to that number. 
+
+next we take the main container and div containing the scrollbar and on each 
+element within each. Now every element has a property that calculates the 
+scroll amount from normal, when you scroll left (in japan its probably on scroll
+right) which moves the page right, from position 0 it counts up in pixels. 
+
+what we do is an if clause checks if the scroll is going to the left of the 
+starting point, then stay at 0 where you belong. 
+
+if it is scrolling past the lastItemEnd - width, then lastItemEnd - width 
+is where you belong mofo. 
+
+so in order to make this into mvc, we can narrow it down that nothing should
+be added to view, as it does not actually have to do with the users choices
+or change teh look, its a simple constraint. 
+
+now its in a class. 
+
+Couple of notes regarding moving it into a class
+I had to create a constructor in order to instantiate the different
+elements that need to be accessed, and they needed to be tied to the this
+of the constructor/class, plus tghe two methods had to be instantiated in the
+constructor
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+now for the hidden menus displayed on hover
+note: can turn the page nav items and the hidden lists into 
+arrays, node list or array depending 
+Then you can reference the node-list and or array by destructuring 
+the arguments in the constructor rather than writing these out
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+currency button doesn't need a class its literally one event listener
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+Carousel this will need to be broken into MVC 
+shouuld be easy, as its small, and uncomplicated
+
+first the eventListener is added to the container with the images
+with a wheel event that just prevents the default behaviour. 
+
+otherwise we have a three layered aproach, the changeHero function, which 
+depending on the inerval translates the carousel to the right and at the end
+back to the beginning, by the interval
+hero1images is a nodelist of the images, so the inerval follows along
