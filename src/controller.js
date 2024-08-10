@@ -388,50 +388,54 @@ class CurrencyMenuFooter {
     this.chevronContainer.appendChild(
       this.chevronDown
     );
-    this.init();
+
     this.isChevronDown = true;
-    console.log(this.chevronContainer);
-    console.log(this.footerCurrencyContainer);
+
+    this.menuElement =
+      document.createElement("div");
+    this.menuElement.id = "currency-menu";
+    this.menuElement.innerHTML = this.markup();
+    this.menuElement.style.display = "none";
+
+    this.footerCurrencyContainer.appendChild(
+      this.menuElement
+    );
+    this.init();
   }
 
   toggleChevron() {
     if (this.isChevronDown) {
-      this.chevronContainer.appendChild(
-        this.chevronUp
-      );
+      // Change to chevron up
       this.chevronContainer.removeChild(
         this.chevronDown
       );
+      this.chevronContainer.appendChild(
+        this.chevronUp
+      );
+      this.isChevronDown = false; // Update state
+      this.menuElement.style.display = "block";
     } else {
-      console.log(this.chevronUp && "true");
-      this.chevronContainer.appendChild(
-        this.chevronDown
-      );
+      // Change to chevron down
       this.chevronContainer.removeChild(
         this.chevronUp
       );
+      this.chevronContainer.appendChild(
+        this.chevronDown
+      );
+      this.isChevronDown = true; // Update state
+      this.menuElement.style.display = "none";
     }
   }
+
   init() {
     this.chevronContainer.addEventListener(
       "click",
-      () => {
-        this.toggleChevron();
-        if (
-          this.chevronContainer.contains(
-            this.chevronDown
-          )
-        ) {
-          console.log("this works when down");
-        } else {
-          console.log("this works when up");
-        }
-      }
+      this.toggleChevron.bind(this)
     );
   }
 
   markup() {
-    return ` <div id="currency-menu">
+    return `
               <ul>
                 <li>Australia $ AUD</li>
                 <li>United States $ USD</li>
@@ -439,7 +443,7 @@ class CurrencyMenuFooter {
                 <li>Europe € EUR</li>
                 <li>Canada $ CAD</li>
               </ul>
-            </div>`;
+              `;
   }
 }
 
@@ -496,5 +500,3 @@ const currencyMenuFooter = new CurrencyMenuFooter(
   footerCurrencyContainer,
   chevronContainer
 );
-
-currencyMenuFooter.init();
